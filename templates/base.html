@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'head.html' %}
+    {% block additional_header %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% include 'messages.html' %}
+    <div class="main">
+
+        <div class="dashboard">
+
+            <div class = "nav-bar">
+
+                <div class="logo-container">
+                    <img src="{% static 'imgs/logo_transparent.png' %}" class="logo">
+                </div>
+
+                <div class="nav-item {% if request.get_full_path == "/home" %}selected-nav-item{% endif %}" onclick="loadUrl('../home')">
+                    <div class="nav-item-icon-container nav-clickable" style="{% if request.get_full_path == "/home" %}color:#f97e28;{% endif %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--bi" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16" style="padding-right: 10px;" ><path fill="currentColor" fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61l4.15-5.073a.5.5 0 0 1 .704-.07Z"></path></svg>     
+                    </div>
+
+                    <div class="nav-item-word-container nav-clickable">
+                        <span class="{% if request.get_full_path == "/home" %}selected{% endif %} nav-word">Your Progress</span>
+                    </div>
+                </div>
+
+                <div class="nav-item {% if request.get_full_path == "/profile" %}selected-nav-item{% endif %}" onclick="loadUrl('../profile')">
+                    <div class="nav-item-icon-container nav-clickable" style="{% if request.get_full_path == "/profile" %}color:#f97e28;{% endif %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--iconoir" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="padding-right: 10px;" ><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2Z"></path><path d="M4.271 18.346S6.5 15.5 12 15.5s7.73 2.846 7.73 2.846M12 12a3 3 0 1 0 0-6a3 3 0 0 0 0 6Z"></path></g></svg>     
+                    </div>
+                    <div class="nav-item-word-container nav-clickable">
+                        <span class="{% if request.get_full_path == "/profile" %}selected{% endif %} nav-word">Profile</span>
+                    </div>
+                </div>
+
+                <div class="dummy"></div>
+
+                <div class="logout-btn-container">
+                    <a class="logout-btn" href="/logout"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h9a2 2 0 0 1 2 2v2h-2V4H6v16h9v-2h2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path><path fill="currentColor" d="M16.09 15.59L17.5 17l5-5l-5-5l-1.41 1.41L18.67 11H9v2h9.67z"></path></svg></a>
+                </div>
+
+            </div>
+    
+            <div class="content">
+                {% block content %}{% endblock %}
+            </div>
+
+        </div>
+
+    </div>
+    {% include 'body_end.html' %}
+    {% block additional_footer %}{% endblock %}
+</body>
+</html>

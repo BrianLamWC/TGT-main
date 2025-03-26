@@ -1,0 +1,10 @@
+ez_setup==0.9
+Django==4.0.5
+django-bootstrap-static==4.2.1
+djangorestframework==3.13.1
+mysqlclient==2.1.1
+django-crispy-forms==1.14.0
+gunicorn
+django-heroku
+asgiref
+dj-database-url

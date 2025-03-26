@@ -1,0 +1,60 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %}Your Progress{% endblock %}
+
+{% block additional_header %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+{% for workout_data in workout_datas %}
+<div class="excercise-tag">
+    <button class="excercise-tag-btn" type="button">{{workout_data.name}}</button>
+    <div class="excercise-tag-content">
+        <div class="graph-container">
+            <div id="chart_{{workout_data.name_sanitized}}"></div>
+        </div>
+        <div class="add-excercise-data-btn-container">
+            <span class= "h2"></span>
+            <div class="form-container">
+                <form id='add_data_point_form_{{workout_data.name_sanitized}}' action="" method="post">
+                    {% csrf_token %}
+                    {{ add_data_point_form }}
+                    <input style="display:none" type="text" name="workout_name" value="{{workout_data.name}}">
+                    &nbsp;
+                    <button class="submit-btn add-excercise-data-btn" value="Submit" form="add_data_point_form_{{workout_data.name_sanitized}}">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<div class="add-excercise-btn-container">
+    <button class="add-excercise-btn" onclick="loadUrl('../new_workout')">Add an excercise</button>
+</div>
+
+{% endblock %}
+
+    
+{% block additional_footer %}
+<script>
+    {% for workout_data in workout_datas %}
+        createChart("chart_{{workout_data.name_sanitized}}",
+        [
+            [
+                "x",
+                {%for date in workout_data.data1%}
+                "{{date}}",
+                {% endfor %}
+            ],
+            [
+                "Values",
+                {% for value in workout_data.data2%}
+                {{value}},
+                {% endfor%}
+            ]
+        ], "line");
+    {% endfor %}
+</script>
+{% endblock %}

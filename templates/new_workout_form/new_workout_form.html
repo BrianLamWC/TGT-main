@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %}Add a new workout{% endblock %}
+
+{% block additional_header %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bmi_form.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="title-container">
+    <span class="title">Enter the name of the workout and an initial value of what you are currently capable of:</span>
+</div>
+<div class="form-container">
+    <form id='new_workout_form' action="" method="post">
+        {% csrf_token %}
+        {{ new_workout_form }}
+        &nbsp;
+        <input class="submit-btn" type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}
+
+{% block additional_footer %}
+<script>
+    $('#new_workout_form').bind("ajax:complete", function()
+        {
+            loadUrl('../home')
+        }
+    )
+</script>
+{% endblock %}

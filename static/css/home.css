@@ -1,0 +1,97 @@
+.excercise-tag{
+	width: 95%;
+	margin-bottom: 30px;
+}
+
+.excercise-tag-btn{
+	display: block;
+    width: 100%;
+    padding: 15px;
+    padding-left: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #2879f9;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.excercise-tag-btn:focus{
+	outline: none !important;
+}
+
+.excercise-tag-btn::after{
+    content: '\25be';
+    color: white;
+    float: right;
+    transform: scale(2);
+}
+
+.excercise-tag-btn-active::after{
+    content:'\25b4';
+}
+
+.excercise-tag-content{
+    display: flex;
+	flex-direction: column;
+    background-color: #2879f9;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s;
+    border: none;
+    outline: none;
+    border-radius: 0px 0px 10px 10px;
+	justify-content: center;
+}
+
+.graph-container{
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.add-excercise-data-btn-container{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.add-excercise-data-btn{
+	outline: none;
+	width: 15%;
+	height:50px;
+	background-color: #f97e28;
+	border: none;
+	color: white;
+	border-radius: 20px;
+}
+
+.add-excercise-data-btn:hover{
+	cursor: pointer;
+}
+
+
+.add-excercise-btn-container{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.add-excercise-btn{
+	outline: none;
+	width: 15%;
+	height:50px;
+	background-color: #f97e28;
+	border: none;
+	color: white;
+	border-radius: 20px;
+}
+
+.add-excercise-btn:hover{
+	cursor: pointer;
+}

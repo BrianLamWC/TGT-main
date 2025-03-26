@@ -1,0 +1,51 @@
+body {
+    /* margin: 0px !important;
+    padding: 0px !important; */
+    background-image: url("../imgs/blur-photo.com_1657124932.jpg");
+    background-size: cover;
+    height: 95vh;
+    background-repeat: no-repeat;
+}
+
+.card {
+    background-color: #28a3f9 !important;
+    color: white;
+    width: 350px;
+    border-radius: 20px !important;
+    transition: all .5s ease-in-out;
+}
+
+.info {
+    text-align: center;
+    font-size: 13px;
+}
+
+.form-group {
+    margin-top: 25px;
+
+}
+
+.form {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.form2 {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+.btn {
+    background: #f97e28 !important;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    width: 100%;
+
+}
+
+.strech {
+    font-size: 11px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

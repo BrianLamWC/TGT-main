@@ -1,0 +1,56 @@
+.title-container{
+	width: 100%;
+	flex:15%;
+	display: flex;
+	align-items: flex-end;
+    justify-content: center;
+}
+
+.greeting{
+	color: white;
+	font-size: 50px;
+}
+
+.form-container{
+	flex: 85%;
+}
+
+.btn{
+	width: 200px;
+	margin-top: 30px;
+	outline: none;
+	height: 50px;
+	background-color: #f97e28;
+	border: none;
+	color: white;
+	border-radius: 20px;
+}
+
+label{
+	color: white;
+	margin-top: 10px;
+}
+
+p{
+	color: white;
+}
+
+li{
+	color: white;
+}
+
+a{
+	color: #f97e28;
+}
+
+#id_username{
+	margin-bottom: 5px;
+}
+
+#hint_id_username{
+	margin-bottom: 20px;
+}
+
+#id_password2{
+	margin-bottom: 5px;
+}

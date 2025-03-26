@@ -1,0 +1,34 @@
+{% extends "login/login_base.html"%}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block additional_header %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="title-container">
+    <span class="greeting">Login to view your dashboard</span>
+</div>
+
+
+<div class="form-container">
+    <div class="container py-5">
+        <div class="text-center container">
+            <form method="POST">
+                {% csrf_token %}
+                {{ login_form|crispy }}
+                <div class="dummy"></div>
+                <button type="submit" class="btn" >Login</button>
+            </form>
+            <div class="dummy"></div>
+            <div class="text-center container">
+                <a class="justify-content-between container stretch" style="color: white;" href="register">Create an account</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

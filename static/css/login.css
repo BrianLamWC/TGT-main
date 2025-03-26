@@ -1,0 +1,32 @@
+.title-container{
+	width: 100%;
+	flex:20%;
+	display: flex;
+	align-items: flex-end;
+    justify-content: center;	
+}
+
+.greeting{
+	color: white;
+	font-size: 50px;
+}
+
+.form-container{
+	flex: 80%;
+}
+
+.btn{
+	width: 200px;
+	margin-top: 30px;
+	outline: none;
+	height: 50px;
+	background-color: #f97e28;
+	border: none;
+	color: white;
+	border-radius: 20px;
+}
+
+label{
+	color: white;
+	margin-top: 10px;
+}

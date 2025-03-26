@@ -1,0 +1,46 @@
+.title-container{
+	width: 100%;
+	flex:20%;
+	display: flex;
+	align-items: flex-end;
+	padding-left: 50px;
+}
+
+.title{
+    color: white;
+    font-size: 50px;
+}
+
+.form-container{
+    flex: 80%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-top: 50px;
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+	align-items: center;
+}
+
+label{
+	color: white;
+	font-weight: 600;
+}
+
+#id_weight, #id_height{
+	margin-bottom: 20px;
+}
+
+.submit-btn{
+	outline: none;
+	width: 15%;
+	height: 50px;
+	background-color: #f97e28;
+	border: none;
+	color: white;
+	border-radius: 20px;
+}

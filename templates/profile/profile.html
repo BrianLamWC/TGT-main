@@ -1,0 +1,60 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %}Profile{% endblock %}
+
+{% block additional_header %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="title-container">
+    <span class="greeting">Great to see you {{user.username}},</span>
+</div>
+
+<div class="stats-container" style="width: 100%; ">
+    <p class="stats">Your last recorded weight:  {{lastEntry.user_weight}}kg</p>
+    <p class="stats">Your last recorded height:  {{lastEntry.user_height}}cm</p>
+    <p class="stats">Your last calculated BMI:  {{lastEntry.user_bmi}}</p>
+    <div class="add-BMI-data-btn-container">
+        <button class="add-BMI-data-btn" onclick="loadUrl('../bmi_form')">Add today's measurements</button>
+    </div>
+</div>
+
+<div class="tags-container">
+
+    <div class="excercise-tag">
+
+        <button class="excercise-tag-btn" type="button">BMI statistics</button>
+    
+        <div class="excercise-tag-content">
+            <div class="graph-container">
+                <div id="chart_bmi"></div>
+            </div>
+        </div>
+    
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block additional_footer %}
+<script>
+    createChart("chart_bmi",
+    [
+        [
+            "x",
+            {%for date in bmi_entries.x%}
+            "{{date}}",
+            {% endfor %}
+        ],
+        [
+            "Values",
+            {% for value in bmi_entries.y%}
+            {{value}},
+            {% endfor%}
+        ]
+    ], "line");
+</script>
+{% endblock %}
